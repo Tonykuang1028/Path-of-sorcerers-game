@@ -13,7 +13,8 @@ scale = Vector2(0.943, 1)
 motion_mode = 1
 script = ExtResource("1_me0e3")
 
-[node name="GodotBottom" type="Sprite2D" parent="."]
+[node name="Skin" type="Sprite2D" parent="."]
+unique_name_in_owner = true
 position = Vector2(-5.30223, 24)
 scale = Vector2(0.943, 1)
 texture = ExtResource("1_48tw5")
