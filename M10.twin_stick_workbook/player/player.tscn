@@ -29,5 +29,5 @@ position = Vector2(-5.30223, 25)
 scale = Vector2(0.943, 1)
 
 [node name="Shadow" parent="." instance=ExtResource("3_tqgqc")]
-position = Vector2(-5.30223, 75)
+position = Vector2(-5.30223, 86)
 scale = Vector2(0.943, 1)
