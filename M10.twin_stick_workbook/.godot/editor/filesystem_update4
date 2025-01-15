@@ -7,3 +7,5 @@ res://levels/test_room.tscn
 res://player/player.gd
 res://bullet.gd
 res://levels/bullet.tscn
+res://weapon.gd
+res://weapons/weapon.tscn

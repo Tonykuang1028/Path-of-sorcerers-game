@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cnyuaogmirlb3"]
+[gd_scene load_steps=6 format=3 uid="uid://cnyuaogmirlb3"]
 
 [ext_resource type="Texture2D" uid="uid://bw03btxpkxde4" path="res://player/godot_bottom.png" id="1_48tw5"]
 [ext_resource type="Script" path="res://player/player.gd" id="1_me0e3"]
 [ext_resource type="PackedScene" path="res://common/shadow.tscn" id="3_tqgqc"]
+[ext_resource type="PackedScene" uid="uid://b824wvrbwwvxt" path="res://weapons/weapon.tscn" id="4_smg88"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tgxcp"]
 radius = 24.74
@@ -20,6 +21,7 @@ scale = Vector2(0.943, 1)
 texture = ExtResource("1_48tw5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+unique_name_in_owner = true
 position = Vector2(-5.30223, 59)
 scale = Vector2(0.943, 1)
 shape = SubResource("CircleShape2D_tgxcp")
@@ -31,3 +33,15 @@ scale = Vector2(0.943, 1)
 [node name="Shadow" parent="." instance=ExtResource("3_tqgqc")]
 position = Vector2(-5.30223, 86)
 scale = Vector2(0.943, 1)
+
+[node name="weaponPivot" type="Node2D" parent="."]
+position = Vector2(69.9894, 34)
+
+[node name="weaponAnchor" type="Marker2D" parent="weaponPivot"]
+unique_name_in_owner = true
+
+[node name="weapon" parent="weaponPivot/weaponAnchor" instance=ExtResource("4_smg88")]
+
+[node name="Sprite2D" type="Sprite2D" parent="weaponPivot/weaponAnchor"]
+
+[node name="Sprite2D2" type="Sprite2D" parent="weaponPivot/weaponAnchor"]
