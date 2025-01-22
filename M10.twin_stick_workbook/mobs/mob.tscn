@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwqm3cmsex5f0"]
+
+[ext_resource type="Script" path="res://mobs/mob.gd" id="1_s8psm"]
+[ext_resource type="Texture2D" uid="uid://nohjoiah3jgr" path="res://mobs/sword_inactive.png" id="2_b3dia"]
+
+[node name="mob" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_s8psm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_b3dia")
+
+[node name="Area2D" type="Area2D" parent="."]

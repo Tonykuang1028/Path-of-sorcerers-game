@@ -1,4 +1,4 @@
-extends CharacterBody2D
+class_name Player extends CharacterBody2D
 
 const GODOT_DOWN = preload("res://player/godot_bottom.png")
 const GODOT_UP_RIGHT = preload("res://player/godot_up_right.png")

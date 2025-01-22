@@ -7,3 +7,6 @@ res://player/player.tscn
 res://levels/bullet.tscn
 res://weapons/weapon.tscn
 res://weapon.gd
+res://mobs/mob.tscn
+res://mobs/mob.gd
+res://player/player.gd
