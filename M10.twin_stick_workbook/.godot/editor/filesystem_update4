@@ -1,10 +1,9 @@
 res://default_env.tres
-res://levels/bullet.tscn
+res://levels/test_room.tscn
 res://addons/gdpractice/assets/theme.tres
 res://levels/rooms/tilesets/floating_dungeon_tileset.tres
 res://levels/rooms/tilesets/tileset_invisible_walls.tres
 res://player/player.tscn
-res://levels/test_room.tscn
+res://levels/bullet.tscn
 res://weapons/weapon.tscn
 res://weapon.gd
-res://player/weapon_pivot.gd

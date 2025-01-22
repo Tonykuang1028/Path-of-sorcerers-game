@@ -49,10 +49,10 @@ position = Vector2(69.9894, 9.53674e-07)
 position = Vector2(7.62939e-06, 0.999999)
 
 [node name="shootleft" type="Marker2D" parent="weaponPivot/weaponAnchor/weapon"]
-position = Vector2(76.7041, 46.0695)
+position = Vector2(77.3595, -43.9281)
 
 [node name="shootright" type="Marker2D" parent="weaponPivot/weaponAnchor/weapon"]
-position = Vector2(77.3595, -43.9281)
+position = Vector2(76.7041, 46.0695)
 
 [node name="LeftHand" type="Sprite2D" parent="weaponPivot/weaponAnchor"]
 position = Vector2(43.5474, -40.8846)
