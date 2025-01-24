@@ -1,13 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://dwqm3cmsex5f0"]
+[gd_scene load_steps=6 format=3 uid="uid://dwqm3cmsex5f0"]
 
 [ext_resource type="Script" path="res://mobs/mob.gd" id="1_s8psm"]
 [ext_resource type="Texture2D" uid="uid://nohjoiah3jgr" path="res://mobs/sword_inactive.png" id="2_b3dia"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_3dvdt"]
-radius = 72.4431
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o1g2w"]
+radius = 24.0
+height = 128.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g147t"]
-radius = 240.0
+radius = 296.108
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0wl8p"]
+bg_color = Color(1.15995e-05, 0.716772, 0.444782, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 
 [node name="mob" type="CharacterBody2D"]
 motion_mode = 1
@@ -16,10 +24,27 @@ script = ExtResource("1_s8psm")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_b3dia")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_3dvdt")
+[node name="DmgBox" type="CollisionShape2D" parent="."]
+rotation = -1.57079
+shape = SubResource("CapsuleShape2D_o1g2w")
 
 [node name="HitBox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 shape = SubResource("CircleShape2D_g147t")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MobHealth" type="ProgressBar" parent="UI"]
+layout_mode = 0
+offset_left = -48.0
+offset_top = -56.0
+offset_right = 56.0
+offset_bottom = -40.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_0wl8p")
+value = 100.0
+show_percentage = false
