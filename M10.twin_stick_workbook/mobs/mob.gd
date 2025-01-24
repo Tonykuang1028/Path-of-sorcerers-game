@@ -1,8 +1,8 @@
 class_name Mob extends CharacterBody2D
 
-@export var max_speed: = 250.0
+@export var max_speed: = 500.0
 @export var acceleration: = 700.0
-@onready var _hit_box: Area2D = %HitBox
+@onready var _hit_box: Area2D = $HitBox
 
 var _player: Player = null
 
@@ -27,4 +27,4 @@ func _physics_process(delta: float) -> void:
 		var desired_velocity := direction * speed
 		velocity = velocity.move_toward(desired_velocity, acceleration * delta)
 		
-#move_and_slide()
+	move_and_slide()
