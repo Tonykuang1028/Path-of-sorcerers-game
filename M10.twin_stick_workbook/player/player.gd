@@ -12,6 +12,12 @@ const DOWN_RIGHT = Vector2.DOWN + Vector2.RIGHT
 const DOWN_LEFT = Vector2.DOWN + Vector2.LEFT
 
 var max_speed := 600.0
+@export var max_health := 100
+var health := max_health: set = set_health
+
+@onready var health_bar: ProgressBar = $UI/HealthBar
+@onready var collision_shape_2d: CollisionShape2D = %CollisionShape2D
+
 
 @onready var _skin: Sprite2D = %Skin
 
@@ -36,3 +42,16 @@ func _physics_process(_delta: float) -> void:
 	if direction_discrete.length() > 0:
 		_skin.flip_h = direction.x < 0.0
 	
+func _ready() -> void:
+	health_bar.max_value = max_health
+	health_bar.value = health
+	
+func set_health(new_health: int) -> void:
+	var previous_health := health
+	health = clampi(new_health, 0, max_health)
+	health_bar.value = health
+	if health == 0:
+		die()
+		
+func die() -> void:
+	queue_free()

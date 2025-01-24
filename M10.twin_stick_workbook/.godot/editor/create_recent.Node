@@ -1,9 +1,9 @@
+CollisionShape2D
+Area2D
 ProgressBar
 Control
-CollisionShape2D
 Sprite2D
 Node2D
-Area2D
 CharacterBody2D
 Marker2D
 Camera2D

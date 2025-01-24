@@ -9,3 +9,4 @@ res://levels/bullet.tscn
 res://weapons/weapon.tscn
 res://mobs/mob.tscn
 res://bullet.gd
+res://player/player.gd

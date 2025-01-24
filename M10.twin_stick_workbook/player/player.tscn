@@ -78,7 +78,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="MobHealth" type="ProgressBar" parent="UI"]
+[node name="HealthBar" type="ProgressBar" parent="UI"]
 layout_mode = 0
 offset_left = -50.9014
 offset_top = -96.0

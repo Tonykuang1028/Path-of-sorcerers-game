@@ -7,6 +7,13 @@ class_name Mob extends CharacterBody2D
 
 var _player: Player = null
 
+@onready var area_2d: Area2D = $Area2D
+@onready var hurtbox: CollisionShape2D = $Area2D/Hurtbox
+
+
+var damage = 20
+
+
 
 func _ready() -> void:
 	_hit_box.body_entered.connect(func(body: Node) -> void:
@@ -17,6 +24,11 @@ func _ready() -> void:
 	_hit_box.body_exited.connect(func(body: Node) -> void:
 		if body is Player:
 			_player = null
+		)
+		
+	area_2d.body_entered.connect(func(body: Node) -> void:
+		if body is Player:
+			body.health -= damage
 		)
 		
 	set_health(health)
@@ -41,4 +53,9 @@ func set_health(new_health: int) -> void:
 
 func die() -> void:
 	queue_free()
+	
+	
+	
+	
+	
 	
