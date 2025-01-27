@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://da8741na6oqy0"]
+
+[node name="HealthPack" type="Area2D"]

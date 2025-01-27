@@ -1,5 +1,4 @@
 res://default_env.tres
-res://mobs/mob.tscn
 res://addons/gdpractice/assets/theme.tres
 res://levels/rooms/tilesets/floating_dungeon_tileset.tres
 res://levels/rooms/tilesets/tileset_invisible_walls.tres
