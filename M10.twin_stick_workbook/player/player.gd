@@ -45,11 +45,14 @@ func _physics_process(_delta: float) -> void:
 func _ready() -> void:
 	health_bar.max_value = max_health
 	health_bar.value = health
-	
+
+
 func set_health(new_health: int) -> void:
 	var previous_health := health
 	health = clampi(new_health, 0, max_health)
 	health_bar.value = health
+	
+
 	if health == 0:
 		die()
 		

@@ -1,38 +1,27 @@
-[gd_scene load_steps=7 format=3 uid="uid://da8741na6oqy0"]
+[gd_scene load_steps=6 format=3 uid="uid://dfcdifm0lngy1"]
 
-[ext_resource type="Script" path="res://pickups/health_pack.gd" id="1_8nqrs"]
-[ext_resource type="AudioStream" uid="uid://o3ra7o263286" path="res://pickups/pickup_health.wav" id="2_8f145"]
-[ext_resource type="Texture2D" uid="uid://bmxcojfothkaq" path="res://pickups/pickup_heart_teal.png" id="3_r5o13"]
+[ext_resource type="Script" path="res://pickups/health_pack.gd" id="1_j01uc"]
+[ext_resource type="Texture2D" uid="uid://bmxcojfothkaq" path="res://pickups/pickup_heart_teal.png" id="1_uyl2q"]
+[ext_resource type="Script" path="res://pickups/Item_Healing.gd" id="2_fqdhj"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_f23y7"]
-radius = 28.0179
+[sub_resource type="Resource" id="Resource_4jt5o"]
+script = ExtResource("2_fqdhj")
+healing_amount = 100
+display_name = ""
 
-[sub_resource type="Animation" id="Animation_0rl8f"]
-resource_name = "idle"
-length = 5.0
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_m5y3y"]
-_data = {
-"idle": SubResource("Animation_0rl8f")
-}
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0nume"]
+size = Vector2(64, 64)
 
 [node name="HealthPack" type="Area2D"]
-position = Vector2(376, 272)
-script = ExtResource("1_8nqrs")
+script = ExtResource("1_j01uc")
+item = SubResource("Resource_4jt5o")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("3_r5o13")
+texture = ExtResource("1_uyl2q")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_f23y7")
+shape = SubResource("RectangleShape2D_0nume")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_8f145")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_m5y3y")
-}
-autoplay = "idle"
-
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
