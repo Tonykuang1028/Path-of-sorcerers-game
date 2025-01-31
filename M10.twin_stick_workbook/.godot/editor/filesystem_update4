@@ -9,3 +9,4 @@ res://pickups/health_pack.gd
 res://pickups/health_pack_script.gd
 res://pickups/Item_healing_script.gd
 res://player/player.gd
+res://player/player.tscn
