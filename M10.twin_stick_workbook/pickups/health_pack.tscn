@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://dfcdifm0lngy1"]
+
+[ext_resource type="Script" path="res://pickups/health_pack.gd" id="1_j01uc"]
+[ext_resource type="Texture2D" uid="uid://bmxcojfothkaq" path="res://pickups/pickup_heart_teal.png" id="1_uyl2q"]
+[ext_resource type="Script" path="res://pickups/Item_Healing.gd" id="2_fqdhj"]
+
+[sub_resource type="Resource" id="Resource_4jt5o"]
+script = ExtResource("2_fqdhj")
+healing_amount = 100
+display_name = ""
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0nume"]
+size = Vector2(64, 64)
+
+[node name="HealthPack" type="Area2D"]
+script = ExtResource("1_j01uc")
+item = SubResource("Resource_4jt5o")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_uyl2q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_0nume")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
