@@ -3,9 +3,10 @@ res://levels/test_room.tscn
 res://addons/gdpractice/assets/theme.tres
 res://levels/rooms/tilesets/floating_dungeon_tileset.tres
 res://levels/rooms/tilesets/tileset_invisible_walls.tres
-res://pickups/health_pack.gd
 res://mobs/mob.tscn
-res://player/player.tscn
-res://levels/bullet.tscn
 res://pickups/health_pack.tscn
-res://pickups/Item_Healing.gd
+res://pickups/health_pack.gd
+res://pickups/health_pack_script.gd
+res://pickups/Item_healing_script.gd
+res://player/player.gd
+res://player/player.tscn

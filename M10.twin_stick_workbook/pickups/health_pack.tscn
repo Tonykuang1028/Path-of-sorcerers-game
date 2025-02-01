@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dfcdifm0lngy1"]
+[gd_scene load_steps=6 format=3 uid="uid://da8741na6oqy0"]
 
 [ext_resource type="Script" path="res://pickups/health_pack.gd" id="1_j01uc"]
 [ext_resource type="Texture2D" uid="uid://bmxcojfothkaq" path="res://pickups/pickup_heart_teal.png" id="1_uyl2q"]
