@@ -8,4 +8,3 @@ res://mobs/mob.tscn
 res://player/player.tscn
 res://levels/bullet.tscn
 res://pickups/health_pack.tscn
-res://pickups/Item_Healing.gd
