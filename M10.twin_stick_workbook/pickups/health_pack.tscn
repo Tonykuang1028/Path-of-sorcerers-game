@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://da8741na6oqy0"]
+[gd_scene load_steps=12 format=3 uid="uid://da8741na6oqy0"]
 
 [ext_resource type="Script" path="res://pickups/health_pack.gd" id="1_j01uc"]
 [ext_resource type="Texture2D" uid="uid://bmxcojfothkaq" path="res://pickups/pickup_heart_teal.png" id="1_uyl2q"]
 [ext_resource type="Script" path="res://pickups/Item_Healing.gd" id="2_fqdhj"]
+[ext_resource type="AudioStream" uid="uid://c2woejhi871h1" path="res://pickups/pickup.wav" id="4_wjob2"]
 
 [sub_resource type="Resource" id="Resource_4jt5o"]
 script = ExtResource("2_fqdhj")
@@ -11,6 +12,103 @@ display_name = ""
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0nume"]
 size = Vector2(64, 64)
+
+[sub_resource type="Animation" id="Animation_2cbtg"]
+resource_name = "idle"
+length = 2.0
+loop_mode = 1
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -16)]
+}
+
+[sub_resource type="Animation" id="Animation_833oq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer2D:stream")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_wjob2")]
+}
+
+[sub_resource type="Animation" id="Animation_t8plm"]
+resource_name = "destory"
+step = 1.0
+
+[sub_resource type="Animation" id="Animation_0uab5"]
+resource_name = "destroy"
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0375704),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer2D:stream")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_wjob2")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a32ap"]
+_data = {
+"RESET": SubResource("Animation_833oq"),
+"destory": SubResource("Animation_t8plm"),
+"destroy": SubResource("Animation_0uab5"),
+"idle": SubResource("Animation_2cbtg")
+}
 
 [node name="HealthPack" type="Area2D"]
 script = ExtResource("1_j01uc")
@@ -23,5 +121,10 @@ texture = ExtResource("1_uyl2q")
 shape = SubResource("RectangleShape2D_0nume")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_wjob2")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_a32ap")
+}
+autoplay = "idle"
