@@ -43,20 +43,20 @@ func set_item(value: Item) -> void:
 		_audio_stream_player_2d.stream = item.sound_on_pickup
 	
 	
-	#area_entered.connect(_on_area_entered)
-	#play_floating_animation()
+	area_entered.connect(_on_area_entered)
+	play_floating_animation()
 	
-#func play_floating_animation() -> void:
-	#var tween := create_tween()
-	#tween.set_trans(Tween.TRANS_SINE)
-		#
-	#var sprite_2d := get_node("Sprite")
-	#var position_offset := Vector2(0.0, 10.0)
-	#var duration = randf_range(0.8, 1.2)
-	#tween.tween_property(sprite_2d, "position", position_offset, duration)
-	#tween.tween_property(sprite_2d, "position",  -1.0 * position_offset, duration)
-	#tween.set_loops()
+func play_floating_animation() -> void:
+	var tween := create_tween()
+	tween.set_trans(Tween.TRANS_SINE)
+		
+	var sprite_2d := get_node("Sprite")
+	var position_offset := Vector2(0.0, 10.0)
+	var duration = randf_range(0.8, 1.2)
+	tween.tween_property(sprite_2d, "position", position_offset, duration)
+	tween.tween_property(sprite_2d, "position",  -1.0 * position_offset, duration)
+	tween.set_loops()
 	
 
-func _on_area_entered(area: Area2D) -> void:
+func _on_area_entered(area: Player) -> void:
 	queue_free()

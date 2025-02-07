@@ -13,7 +13,6 @@ display_name = ""
 size = Vector2(64, 64)
 
 [node name="HealthPack" type="Area2D"]
-light_mask = 2
 script = ExtResource("1_j01uc")
 item = SubResource("Resource_4jt5o")
 
