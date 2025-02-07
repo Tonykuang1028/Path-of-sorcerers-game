@@ -16,3 +16,4 @@ position = Vector2(690, 682)
 position = Vector2(680, 334)
 
 [node name="HealthPack" parent="." instance=ExtResource("4_0vmlr")]
+position = Vector2(414, 878)

@@ -4,11 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://nohjoiah3jgr" path="res://mobs/sword_inactive.png" id="2_b3dia"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o1g2w"]
-radius = 19.0
+radius = 27.0
 height = 128.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g147t"]
-radius = 296.108
+radius = 357.274
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0wl8p"]
 bg_color = Color(1.15995e-05, 0.716772, 0.444782, 1)

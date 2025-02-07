@@ -18,6 +18,8 @@ corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
 [node name="Player" type="CharacterBody2D"]
+light_mask = 3
+visibility_layer = 2
 position = Vector2(5.96046e-08, -7.10543e-15)
 scale = Vector2(0.943, 1)
 motion_mode = 1
