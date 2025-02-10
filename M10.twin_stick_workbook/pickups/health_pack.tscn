@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bmxcojfothkaq" path="res://pickups/pickup_heart_teal.png" id="1_uyl2q"]
 [ext_resource type="Script" path="res://pickups/Item_Healing.gd" id="2_fqdhj"]
 
-[sub_resource type="Resource" id="Resource_4jt5o"]
+[sub_resource type="Resource" id="Resource_31i2h"]
 script = ExtResource("2_fqdhj")
 healing_amount = 50
 display_name = ""
@@ -14,7 +14,7 @@ size = Vector2(64, 64)
 
 [node name="HealthPack" type="Area2D"]
 script = ExtResource("1_j01uc")
-item = SubResource("Resource_4jt5o")
+item = SubResource("Resource_31i2h")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_uyl2q")

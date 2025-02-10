@@ -1,8 +1,15 @@
-[gd_scene load_steps=8 format=3 uid="uid://cta0x6wxcbinx"]
+[gd_scene load_steps=11 format=3 uid="uid://cta0x6wxcbinx"]
 
 [ext_resource type="Texture2D" uid="uid://w4kafn2xajre" path="res://pickups/chest/chest_large_bottom.png" id="1_pb02n"]
 [ext_resource type="Script" path="res://pickups/chest/chest.gd" id="1_pxxyq"]
+[ext_resource type="Script" path="res://pickups/HealthPack.gd" id="2_o6apk"]
 [ext_resource type="Texture2D" uid="uid://br78bw4ewb5gl" path="res://pickups/chest/chest_large_top.png" id="2_yxn3c"]
+[ext_resource type="Script" path="res://pickups/Item_Healing.gd" id="3_qvb7x"]
+
+[sub_resource type="Resource" id="Resource_6o5ff"]
+script = ExtResource("3_qvb7x")
+healing_amount = 50
+display_name = ""
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u66ag"]
 size = Vector2(130, 81)
@@ -46,6 +53,7 @@ _data = {
 [node name="Chest" type="Area2D"]
 position = Vector2(-35, -1)
 script = ExtResource("1_pxxyq")
+possible_items = Array[ExtResource("2_o6apk")]([SubResource("Resource_6o5ff")])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false

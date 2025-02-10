@@ -19,8 +19,8 @@ func _unhandled_input(event: InputEvent) -> void:
 	if is_player_near and event.is_action_pressed("interact"):
 		_animation_player.play("Open")
 		
-	create_pickup()
-	get_viewport().set_input_as_handled()
+		create_pickup()
+		get_viewport().set_input_as_handled()
 	
 func create_pickup() -> void:
 	if possible_items == []: 
