@@ -20,6 +20,7 @@ corner_radius_bottom_left = 4
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(5.96046e-08, -7.10543e-15)
 scale = Vector2(0.943, 1)
+collision_mask = 65
 motion_mode = 1
 script = ExtResource("1_me0e3")
 

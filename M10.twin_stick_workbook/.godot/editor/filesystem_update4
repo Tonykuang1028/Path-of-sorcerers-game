@@ -9,4 +9,5 @@ res://player/player.tscn
 res://levels/bullet.tscn
 res://pickups/health_pack.tscn
 res://pickups/chest/chest.tscn
-res://pickups/chest/chest.gd
+res://levels/rooms/game.tscn
+res://levels/invisible_walls.tscn

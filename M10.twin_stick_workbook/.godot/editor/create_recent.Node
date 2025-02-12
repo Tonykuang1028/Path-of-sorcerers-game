@@ -1,3 +1,4 @@
+Node2D
 AnimationPlayer
 AnimationTree
 CanvasGroup
@@ -5,7 +6,6 @@ CollisionShape2D
 Area2D
 AudioStreamPlayer2D
 Sprite2D
-Node2D
 ProgressBar
 Control
 CharacterBody2D
