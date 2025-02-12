@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://dhjkc41pisiyv"]
+[gd_scene load_steps=27 format=4 uid="uid://dhjkc41pisiyv"]
 
 [ext_resource type="PackedScene" uid="uid://wdey00p3syru" path="res://levels/background/background_blue_sky.tscn" id="1_ugarb"]
 [ext_resource type="PackedScene" uid="uid://cu2rb5dl4ljte" path="res://levels/rooms/room_a.tscn" id="2_prrto"]
@@ -9,7 +9,23 @@
 [ext_resource type="PackedScene" uid="uid://cq0mmphkbrvmm" path="res://levels/rooms/room_c.tscn" id="5_vpxkq"]
 [ext_resource type="PackedScene" uid="uid://cta0x6wxcbinx" path="res://pickups/chest/chest.tscn" id="6_gsx6h"]
 [ext_resource type="PackedScene" uid="uid://dgayuh42w4v6u" path="res://levels/rooms/room_b.tscn" id="6_guvie"]
+[ext_resource type="Texture2D" uid="uid://cemsu0d7gpb1d" path="res://levels/props/statue_hammer.png" id="8_ldmai"]
+[ext_resource type="Texture2D" uid="uid://dsgrlf1blfokn" path="res://levels/props/statue_mace.png" id="9_kgo4s"]
 [ext_resource type="PackedScene" uid="uid://da8741na6oqy0" path="res://pickups/health_pack.tscn" id="10_1mfd8"]
+[ext_resource type="Texture2D" uid="uid://bsw2xiqemlhfp" path="res://levels/props/table_small_pots.png" id="11_yb3nd"]
+[ext_resource type="Texture2D" uid="uid://bl7fmqsn8uu8h" path="res://levels/props/books_3.png" id="14_un7rq"]
+[ext_resource type="Texture2D" uid="uid://dgaeuhfuhwle2" path="res://levels/props/gems_blue_1.png" id="15_p4b4l"]
+[ext_resource type="Texture2D" uid="uid://cdk08n3i0agup" path="res://levels/props/gems_blue_2.png" id="16_nka5m"]
+[ext_resource type="Texture2D" uid="uid://dxhbawh7l6wux" path="res://levels/props/gems_green_1.png" id="17_g378b"]
+[ext_resource type="Texture2D" uid="uid://6e1ykwlqveol" path="res://levels/props/gems_mixed_1.png" id="18_q3mxn"]
+[ext_resource type="Texture2D" uid="uid://chjn26ibdc2nv" path="res://levels/props/gems_mixed_3.png" id="19_orf7j"]
+[ext_resource type="Texture2D" uid="uid://cxjy8qxpmubt2" path="res://levels/props/gems_red_1.png" id="20_2kprh"]
+[ext_resource type="Texture2D" uid="uid://b1mhee1wq4skl" path="res://levels/props/gems_silver_1.png" id="21_8jgpd"]
+[ext_resource type="Texture2D" uid="uid://7g1m04owvvmo" path="res://levels/props/gems_yellow_1.png" id="22_l28gc"]
+[ext_resource type="Texture2D" uid="uid://c1cch51fhbxi8" path="res://levels/props/rocks_sword.png" id="23_c1cdn"]
+[ext_resource type="Texture2D" uid="uid://dqsx4s3vbcjiv" path="res://levels/props/statue_gems.png" id="24_k1u81"]
+[ext_resource type="Texture2D" uid="uid://c2d0wk56h4jty" path="res://levels/props/rocks_shield.png" id="25_w27qp"]
+[ext_resource type="Texture2D" uid="uid://23hbaaoofbeh" path="res://levels/props/pot_stone_stacked.png" id="26_es55l"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -47,6 +63,14 @@ position = Vector2(240, 504)
 [node name="Chest" parent="RoomB" instance=ExtResource("6_gsx6h")]
 position = Vector2(536, 696)
 
+[node name="StatueHammer" type="Sprite2D" parent="RoomB"]
+position = Vector2(-1728, -200)
+texture = ExtResource("8_ldmai")
+
+[node name="StatueMace" type="Sprite2D" parent="RoomB"]
+position = Vector2(-2360, 512)
+texture = ExtResource("9_kgo4s")
+
 [node name="RoomC" parent="." instance=ExtResource("5_vpxkq")]
 position = Vector2(2040, -2336)
 
@@ -57,13 +81,13 @@ rotation = -0.00114604
 tile_map_data = PackedByteArray("AAAaAPn/AAAAAAAAAAAbAPn/AAAAAAAAAAAbAPj/AAAAAAAAAAAbAPf/AAAAAAAAAAAbAPb/AAAAAAAAAAAbAPX/AAAAAAAAAAAbAPT/AAAAAAAAAAAaAPT/AAAAAAAAAAAZAPT/AAAAAAAAAAAYAPT/AAAAAAAAAAAZAPP/AAAAAAAAAAAZAPL/AAAAAAAAAAAZAPH/AAAAAAAAAAAZAPD/AAAAAAAAAAAZAO//AAAAAAAAAAAYAO//AAAAAAAAAAAYAO7/AAAAAAAAAAAYAO3/AAAAAAAAAAAXAO3/AAAAAAAAAAAWAO3/AAAAAAAAAAAVAO3/AAAAAAAAAAAUAO3/AAAAAAAAAAATAO3/AAAAAAAAAAASAO3/AAAAAAAAAAARAO3/AAAAAAAAAAARAO7/AAAAAAAAAAARAO//AAAAAAAAAAAQAPD/AAAAAAAAAAAQAPH/AAAAAAAAAAARAPL/AAAAAAAAAAARAPP/AAAAAAAAAAARAPT/AAAAAAAAAAARAPX/AAAAAAAAAAARAPb/AAAAAAAAAAASAPb/AAAAAAAAAAASAPf/AAAAAAAAAAASAPj/AAAAAAAAAAATAPj/AAAAAAAAAAATAPn/AAAAAAAAAAAUAPn/AAAAAAAAAAAVAPn/AAAAAAAAAAAWAPn/AAAAAAAAAAAXAPn/AAAAAAAAAAAYAPn/AAAAAAAAAAAaAPj/AAABAAAAAAAYAPj/AAABAAAAAAAXAPj/AAABAAAAAAAWAPj/AAABAAAAAAAVAPj/AAABAAAAAAAUAPj/AAABAAAAAAATAPf/AAABAAAAAAASAPX/AAABAAAAAAARAPH/AAABAAAAAAAYAPP/AAABAAAAAAAYAPr/AAAAAAAAAAAaAPr/AAAAAAAAAAAaAPv/AAAAAAAAAAAYAPv/AAAAAAAAAAAYAPz/AAAAAAAAAAAaAPz/AAAAAAAAAAAaAP3/AAAAAAAAAAAYAP3/AAAAAAAAAAAYAP7/AAAAAAAAAAAaAP7/AAAAAAAAAAAaAP//AAAAAAAAAAAYAP//AAAAAAAAAAAYAAAAAAAAAAAAAAAYAAEAAAAAAAAAAAAZAAEAAAAAAAAAAAAaAAEAAAAAAAAAAAAbAP//AAAAAAAAAAAcAP//AAAAAAAAAAAdAAAAAAAAAAAAAAAdAAEAAAAAAAAAAAAbAAEAAAAAAAAAAAAbAAIAAAAAAAAAAAAdAAIAAAAAAAAAAAA=")
 
 [node name="mob" parent="RoomC" instance=ExtResource("4_su15j")]
-position = Vector2(528, 512)
+position = Vector2(496, 224)
 
 [node name="mob2" parent="RoomC" instance=ExtResource("4_su15j")]
-position = Vector2(784, 496)
+position = Vector2(860, 256)
 
 [node name="mob3" parent="RoomC" instance=ExtResource("4_su15j")]
-position = Vector2(680, 784)
+position = Vector2(640, 472)
 
 [node name="Chest" parent="RoomC" instance=ExtResource("6_gsx6h")]
 position = Vector2(288, 56)
@@ -74,6 +98,10 @@ position = Vector2(416, 55)
 [node name="Chest3" parent="RoomC" instance=ExtResource("6_gsx6h")]
 position = Vector2(552, 56)
 
+[node name="TableSmallPots" type="Sprite2D" parent="RoomC"]
+position = Vector2(1440, 2728)
+texture = ExtResource("11_yb3nd")
+
 [node name="Player" parent="." instance=ExtResource("3_dd5m5")]
 position = Vector2(576, 432)
 rotation = -0.00114604
@@ -83,3 +111,55 @@ position = Vector2(1968, 560)
 
 [node name="HealthPack2" parent="." instance=ExtResource("10_1mfd8")]
 position = Vector2(3259, 40)
+
+[node name="Books3" type="Sprite2D" parent="."]
+position = Vector2(3264, 376)
+texture = ExtResource("14_un7rq")
+
+[node name="GemsBlue1" type="Sprite2D" parent="."]
+position = Vector2(3120, -1854)
+texture = ExtResource("15_p4b4l")
+
+[node name="GemsBlue2" type="Sprite2D" parent="."]
+position = Vector2(2888, -2136)
+texture = ExtResource("16_nka5m")
+
+[node name="GemsGreen1" type="Sprite2D" parent="."]
+position = Vector2(3000, -1592)
+texture = ExtResource("17_g378b")
+
+[node name="GemsMixed1" type="Sprite2D" parent="."]
+position = Vector2(2352, -2128)
+texture = ExtResource("18_q3mxn")
+
+[node name="GemsMixed3" type="Sprite2D" parent="."]
+position = Vector2(2576, -1816)
+texture = ExtResource("19_orf7j")
+
+[node name="GemsRed1" type="Sprite2D" parent="."]
+position = Vector2(2344, -1656)
+texture = ExtResource("20_2kprh")
+
+[node name="GemsSilver1" type="Sprite2D" parent="."]
+position = Vector2(2984, -1400)
+texture = ExtResource("21_8jgpd")
+
+[node name="GemsYellow1" type="Sprite2D" parent="."]
+position = Vector2(3376, -1320)
+texture = ExtResource("22_l28gc")
+
+[node name="RocksSword" type="Sprite2D" parent="."]
+position = Vector2(2784, -2264)
+texture = ExtResource("23_c1cdn")
+
+[node name="StatueGems" type="Sprite2D" parent="."]
+position = Vector2(2968, -2312)
+texture = ExtResource("24_k1u81")
+
+[node name="RocksShield" type="Sprite2D" parent="."]
+position = Vector2(3032, 472)
+texture = ExtResource("25_w27qp")
+
+[node name="PotStoneStacked" type="Sprite2D" parent="."]
+position = Vector2(3392, 368)
+texture = ExtResource("26_es55l")
