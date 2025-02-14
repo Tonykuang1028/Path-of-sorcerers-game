@@ -27,6 +27,8 @@ texture = ExtResource("2_b3dia")
 [node name="DmgBox" type="CollisionShape2D" parent="."]
 rotation = -1.57079
 shape = SubResource("CapsuleShape2D_o1g2w")
+one_way_collision = true
+debug_color = Color(0.820333, 0.40269, 5.77569e-07, 0.42)
 
 [node name="HitBox" type="Area2D" parent="."]
 
