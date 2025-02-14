@@ -1,5 +1,6 @@
-[gd_scene load_steps=27 format=4 uid="uid://dhjkc41pisiyv"]
+[gd_scene load_steps=33 format=4 uid="uid://dhjkc41pisiyv"]
 
+[ext_resource type="Script" path="res://levels/rooms/game.gd" id="1_364bl"]
 [ext_resource type="PackedScene" uid="uid://wdey00p3syru" path="res://levels/background/background_blue_sky.tscn" id="1_ugarb"]
 [ext_resource type="PackedScene" uid="uid://cu2rb5dl4ljte" path="res://levels/rooms/room_a.tscn" id="2_prrto"]
 [ext_resource type="PackedScene" uid="uid://cnyuaogmirlb3" path="res://player/player.tscn" id="3_dd5m5"]
@@ -26,8 +27,16 @@
 [ext_resource type="Texture2D" uid="uid://dqsx4s3vbcjiv" path="res://levels/props/statue_gems.png" id="24_k1u81"]
 [ext_resource type="Texture2D" uid="uid://c2d0wk56h4jty" path="res://levels/props/rocks_shield.png" id="25_w27qp"]
 [ext_resource type="Texture2D" uid="uid://23hbaaoofbeh" path="res://levels/props/pot_stone_stacked.png" id="26_es55l"]
+[ext_resource type="Texture2D" uid="uid://cwurq7yvv5xdu" path="res://teleporter/teleporter_base.png" id="27_htss0"]
+[ext_resource type="Texture2D" uid="uid://cb5e2w7i8756i" path="res://teleporter/teleporter_beam_green.png" id="28_sqnpc"]
+[ext_resource type="PackedScene" uid="uid://faow0wsp35yc" path="res://teleporter/death_screen.tscn" id="29_05de3"]
+[ext_resource type="PackedScene" uid="uid://ceqgj26y8okl1" path="res://teleporter/end_screen.tscn" id="29_wnh0m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j1gdc"]
+size = Vector2(161, 160)
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_364bl")
 
 [node name="BackgroundBlueSky" parent="." instance=ExtResource("1_ugarb")]
 
@@ -81,13 +90,13 @@ rotation = -0.00114604
 tile_map_data = PackedByteArray("AAAaAPn/AAAAAAAAAAAbAPn/AAAAAAAAAAAbAPj/AAAAAAAAAAAbAPf/AAAAAAAAAAAbAPb/AAAAAAAAAAAbAPX/AAAAAAAAAAAbAPT/AAAAAAAAAAAaAPT/AAAAAAAAAAAZAPT/AAAAAAAAAAAYAPT/AAAAAAAAAAAZAPP/AAAAAAAAAAAZAPL/AAAAAAAAAAAZAPH/AAAAAAAAAAAZAPD/AAAAAAAAAAAZAO//AAAAAAAAAAAYAO//AAAAAAAAAAAYAO7/AAAAAAAAAAAYAO3/AAAAAAAAAAAXAO3/AAAAAAAAAAAWAO3/AAAAAAAAAAAVAO3/AAAAAAAAAAAUAO3/AAAAAAAAAAATAO3/AAAAAAAAAAASAO3/AAAAAAAAAAARAO3/AAAAAAAAAAARAO7/AAAAAAAAAAARAO//AAAAAAAAAAAQAPD/AAAAAAAAAAAQAPH/AAAAAAAAAAARAPL/AAAAAAAAAAARAPP/AAAAAAAAAAARAPT/AAAAAAAAAAARAPX/AAAAAAAAAAARAPb/AAAAAAAAAAASAPb/AAAAAAAAAAASAPf/AAAAAAAAAAASAPj/AAAAAAAAAAATAPj/AAAAAAAAAAATAPn/AAAAAAAAAAAUAPn/AAAAAAAAAAAVAPn/AAAAAAAAAAAWAPn/AAAAAAAAAAAXAPn/AAAAAAAAAAAYAPn/AAAAAAAAAAAaAPj/AAABAAAAAAAYAPj/AAABAAAAAAAXAPj/AAABAAAAAAAWAPj/AAABAAAAAAAVAPj/AAABAAAAAAAUAPj/AAABAAAAAAATAPf/AAABAAAAAAASAPX/AAABAAAAAAARAPH/AAABAAAAAAAYAPP/AAABAAAAAAAYAPr/AAAAAAAAAAAaAPr/AAAAAAAAAAAaAPv/AAAAAAAAAAAYAPv/AAAAAAAAAAAYAPz/AAAAAAAAAAAaAPz/AAAAAAAAAAAaAP3/AAAAAAAAAAAYAP3/AAAAAAAAAAAYAP7/AAAAAAAAAAAaAP7/AAAAAAAAAAAaAP//AAAAAAAAAAAYAP//AAAAAAAAAAAYAAAAAAAAAAAAAAAYAAEAAAAAAAAAAAAZAAEAAAAAAAAAAAAaAAEAAAAAAAAAAAAbAP//AAAAAAAAAAAcAP//AAAAAAAAAAAdAAAAAAAAAAAAAAAdAAEAAAAAAAAAAAAbAAEAAAAAAAAAAAAbAAIAAAAAAAAAAAAdAAIAAAAAAAAAAAA=")
 
 [node name="mob" parent="RoomC" instance=ExtResource("4_su15j")]
-position = Vector2(496, 224)
+position = Vector2(584, 718)
 
 [node name="mob2" parent="RoomC" instance=ExtResource("4_su15j")]
-position = Vector2(860, 256)
+position = Vector2(832, 688)
 
 [node name="mob3" parent="RoomC" instance=ExtResource("4_su15j")]
-position = Vector2(640, 472)
+position = Vector2(752, 944)
 
 [node name="Chest" parent="RoomC" instance=ExtResource("6_gsx6h")]
 position = Vector2(288, 56)
@@ -112,54 +121,80 @@ position = Vector2(1968, 560)
 [node name="HealthPack2" parent="." instance=ExtResource("10_1mfd8")]
 position = Vector2(3259, 40)
 
-[node name="Books3" type="Sprite2D" parent="."]
+[node name="decoration" type="Node2D" parent="."]
+
+[node name="Books3" type="Sprite2D" parent="decoration"]
 position = Vector2(3264, 376)
 texture = ExtResource("14_un7rq")
 
-[node name="GemsBlue1" type="Sprite2D" parent="."]
+[node name="GemsBlue1" type="Sprite2D" parent="decoration"]
 position = Vector2(3120, -1854)
 texture = ExtResource("15_p4b4l")
 
-[node name="GemsBlue2" type="Sprite2D" parent="."]
+[node name="GemsBlue2" type="Sprite2D" parent="decoration"]
 position = Vector2(2888, -2136)
 texture = ExtResource("16_nka5m")
 
-[node name="GemsGreen1" type="Sprite2D" parent="."]
+[node name="GemsGreen1" type="Sprite2D" parent="decoration"]
 position = Vector2(3000, -1592)
 texture = ExtResource("17_g378b")
 
-[node name="GemsMixed1" type="Sprite2D" parent="."]
+[node name="GemsMixed1" type="Sprite2D" parent="decoration"]
 position = Vector2(2352, -2128)
 texture = ExtResource("18_q3mxn")
 
-[node name="GemsMixed3" type="Sprite2D" parent="."]
+[node name="GemsMixed3" type="Sprite2D" parent="decoration"]
 position = Vector2(2576, -1816)
 texture = ExtResource("19_orf7j")
 
-[node name="GemsRed1" type="Sprite2D" parent="."]
+[node name="GemsRed1" type="Sprite2D" parent="decoration"]
 position = Vector2(2344, -1656)
 texture = ExtResource("20_2kprh")
 
-[node name="GemsSilver1" type="Sprite2D" parent="."]
+[node name="GemsSilver1" type="Sprite2D" parent="decoration"]
 position = Vector2(2984, -1400)
 texture = ExtResource("21_8jgpd")
 
-[node name="GemsYellow1" type="Sprite2D" parent="."]
+[node name="GemsYellow1" type="Sprite2D" parent="decoration"]
 position = Vector2(3376, -1320)
 texture = ExtResource("22_l28gc")
 
-[node name="RocksSword" type="Sprite2D" parent="."]
+[node name="RocksSword" type="Sprite2D" parent="decoration"]
 position = Vector2(2784, -2264)
 texture = ExtResource("23_c1cdn")
 
-[node name="StatueGems" type="Sprite2D" parent="."]
+[node name="StatueGems" type="Sprite2D" parent="decoration"]
 position = Vector2(2968, -2312)
 texture = ExtResource("24_k1u81")
 
-[node name="RocksShield" type="Sprite2D" parent="."]
+[node name="RocksShield" type="Sprite2D" parent="decoration"]
 position = Vector2(3032, 472)
 texture = ExtResource("25_w27qp")
 
-[node name="PotStoneStacked" type="Sprite2D" parent="."]
+[node name="PotStoneStacked" type="Sprite2D" parent="decoration"]
 position = Vector2(3392, 368)
 texture = ExtResource("26_es55l")
+
+[node name="Teleporter" type="Area2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(2280, -1984)
+
+[node name="Sprite2D" type="Sprite2D" parent="Teleporter"]
+texture = ExtResource("27_htss0")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Teleporter"]
+texture = ExtResource("28_sqnpc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Teleporter"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_j1gdc")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Teleporter"]
+
+[node name="EndScreen" parent="Teleporter/CanvasLayer" instance=ExtResource("29_wnh0m")]
+visible = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="DeathScreen" parent="CanvasLayer" instance=ExtResource("29_05de3")]
+visible = false

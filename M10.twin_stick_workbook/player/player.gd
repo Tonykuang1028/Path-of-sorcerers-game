@@ -21,6 +21,11 @@ var health := max_health: set = set_health
 
 @onready var _skin: Sprite2D = %Skin
 
+
+@onready var death_screen: DeathScreen = $"../CanvasLayer/DeathScreen"
+@onready var end_screen: EndScreen = $"../Teleporter/CanvasLayer/EndScreen"
+
+
 func _physics_process(_delta: float) -> void:
 	var direction := Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	velocity = direction * max_speed
@@ -57,4 +62,8 @@ func set_health(new_health: int) -> void:
 		die()
 		
 func die() -> void:
-	queue_free()
+	end_screen.open()
+	death_screen.visible = true
+	get_tree().paused = true
+	if death_screen.visible == true:
+		queue_free()

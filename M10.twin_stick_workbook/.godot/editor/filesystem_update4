@@ -10,3 +10,11 @@ res://player/player.tscn
 res://levels/bullet.tscn
 res://pickups/chest/chest.tscn
 res://levels/invisible_walls.tscn
+res://weapon.gd
+res://teleporter/death_screen.tscn
+res://teleporter/death_screen.gd
+res://player/player.gd
+res://teleporter/end_screen.tscn
+res://teleporter/end_screen.gd
+res://pickups/health_pack.tscn
+res://levels/rooms/game.gd

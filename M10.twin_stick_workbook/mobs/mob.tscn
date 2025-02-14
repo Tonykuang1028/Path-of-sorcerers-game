@@ -57,3 +57,4 @@ show_percentage = false
 [node name="Hurtbox" type="CollisionShape2D" parent="Area2D"]
 rotation = -1.57079
 shape = SubResource("CapsuleShape2D_o1g2w")
+one_way_collision = true
